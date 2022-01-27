@@ -1,0 +1,103 @@
+html,
+body,
+.box .content {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+body {
+	background-image: url("images/dollar_sign_bg.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.box {
+	width: 500px;
+	height: 400px;
+	box-sizing: border-box;
+	padding: 15px;
+	position: relative;
+	overflow: hidden;
+}
+
+.box::before {
+	content: '';
+	position: absolute;
+	width: 175%;
+	height: 175%;
+	background: repeating-linear-gradient(
+			white 0%,
+			white 7.5px,
+			rgb(0, 112, 0) 7.5px,
+			rgb(0, 112, 0) 15px,
+			white 15px,
+			white 22.5px,
+			rgb(0, 112, 0) 22.5px,
+			rgb(0, 112, 0) 30px);
+	transform: translateX(-20%) translateY(-20%) rotate(-45deg);
+	animation: animate 60s linear infinite;
+}
+
+.box .content {
+	position: relative;
+	background-color: white;
+	flex-direction: column;
+	box-sizing: border-box;
+	padding: 10px;
+	text-align: center;
+	font-family: sans-serif;
+	z-index: 2;
+}
+
+.box,
+.box .content {
+	box-shadow: 0 0 2px rgb(0, 112, 0),
+				0 0 5px rgba(0, 0, 0, 1),
+				inset 0 0 5px rgba(0, 0, 0, 1);
+	border-radius: 10px;
+}
+
+@keyframes animate {
+	from {
+		background-position: 0;
+	}
+
+	to {
+		background-position: 0 450px;
+	}
+}
+
+form
+{
+    background-color: white;
+}
+
+h1
+{
+    color: goldenrod;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+}
+
+p
+{
+    text-align: center;
+}
+
+label
+{
+    float: left;
+    text-align: left;
+    width: 35%;
+    font-weight: bold;
+}
+
+
+[type = "button"]
+{
+    margin: 10px 10px 0 0;
+}
